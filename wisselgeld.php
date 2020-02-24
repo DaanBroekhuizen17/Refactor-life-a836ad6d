@@ -10,7 +10,7 @@ define("GELDEENHEDEN", [
     50,
     20,
     10,
-    5,
+    5
 ])
 ;
 
