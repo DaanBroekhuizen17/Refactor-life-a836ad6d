@@ -3,7 +3,8 @@
 $input = $argv[1];
 $bedrag = floatval($input);
 
-define("GELDEENHEDEN", 
+define(
+    "GELDEENHEDEN", 
     [
     500,
     200,
