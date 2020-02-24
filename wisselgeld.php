@@ -3,7 +3,7 @@
 $input = $argv[1];
 $bedrag = floatval($input);
 
-define("geldeenheden", [
+define("GELDEENHEDEN", [
     500,
     200,
     100,
@@ -11,13 +11,14 @@ define("geldeenheden", [
     20,
     10,
     5,
-]);
+])
+;
 
 
 $restbedrag = $bedrag;
 
 foreach(geldeenheden as $euro){
-    if($restbedrag >= $euro){
+    if($restbedrag>=$euro) {
         $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
         $restbedrag = $restbedrag - $euro * $aantalKeerEuroInRestBedrag;
         echo($aantalKeerEuroInRestBedrag. " X " .$euro. " euro".PHP_EOL);
@@ -27,7 +28,7 @@ foreach(geldeenheden as $euro){
 $restbedrag = $restbedrag * 100;
 
 foreach(geldeenheden as $euro){
-    if($restbedrag >= $euro){
+    if($restbedrag>=$euro) {
         $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
         $restbedrag = round($restbedrag - $euro * $aantalKeerEuroInRestBedrag);
         echo($aantalKeerEuroInRestBedrag. " X " .$euro. " cent".PHP_EOL);
