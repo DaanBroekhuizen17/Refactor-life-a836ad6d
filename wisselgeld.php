@@ -14,8 +14,7 @@ define(
     10,
     5
     ]
-)
-;
+);
 
 
 $restbedrag = $bedrag;
