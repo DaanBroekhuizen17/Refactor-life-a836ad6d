@@ -3,15 +3,14 @@
 $input = $argv[1];
 $bedrag = floatval($input);
 
-define("GELDEENHEDEN", [
+define("GELDEENHEDEN",[
     500,
     200,
     100,
     50,
     20,
     10,
-    5
-])
+    5])
 ;
 
 
