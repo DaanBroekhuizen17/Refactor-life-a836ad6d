@@ -12,28 +12,46 @@ define(
     50,
     20,
     10,
+    5,
+    2,
+    1
+    ]
+);   
+
+define(
+    "CENTEN",
+    [
+    50,
+    20,
+    10,
     5
     ]
 );
 
-
 $restbedrag = $bedrag;
 
-foreach(geldeenheden as $euro){
-    if($restbedrag>=$euro) {
-        $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
-        $restbedrag = $restbedrag - $euro * $aantalKeerEuroInRestBedrag;
-        echo($aantalKeerEuroInRestBedrag. " X " .$euro. " euro".PHP_EOL);
+function euros($restbedrag){
+    foreach(GELDEENHEDEN as $euro){
+        if($restbedrag>=$euro) {
+            $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
+            $restbedrag = $restbedrag - $euro * $aantalKeerEuroInRestBedrag;
+            echo($aantalKeerEuroInRestBedrag. " X " .$euro. " euro".PHP_EOL);
+        }
+    }
+    return $restbedrag;
+}
+
+$restbedrag = euros($restbedrag) * 100;
+
+function cents($restbedrag){
+    foreach(CENTEN as $euro){
+        if($restbedrag>=$euro) {
+            $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
+            $restbedrag = round($restbedrag - $euro * $aantalKeerEuroInRestBedrag);
+            echo($aantalKeerEuroInRestBedrag. " X " .$euro. " cent".PHP_EOL);
+        }
     }
 }
 
-$restbedrag = $restbedrag * 100;
-
-foreach(geldeenheden as $euro){
-    if($restbedrag>=$euro) {
-        $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
-        $restbedrag = round($restbedrag - $euro * $aantalKeerEuroInRestBedrag);
-        echo($aantalKeerEuroInRestBedrag. " X " .$euro. " cent".PHP_EOL);
-    }
-}
+cents($restbedrag);
 ?>
